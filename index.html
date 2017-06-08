@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project programm</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+</head>
+<body>
+  <template id="template-task">
+    <div class="task">
+      <h2 data-attr="title"></h2>
+      <div class="short-description">
+        <div class="number">
+          <span>Проект: <b data-attr="project"></b></span>
+        </div>
+        <div class="priority">
+          <span>Priority: <b data-attr="priority"></b></span>
+        </div>
+      </div>
+      <div class="description hide" data-attr="description"></div>
+      <div class="btn-row">
+        <button class="btn btn-edit" name="edit">Изменить</button>
+        <button class="btn btn-close" name="close">Закрить</button>
+        <button class="btn btn-open" name="toggle" data-expanded="Свернуть" data-collapsed="Развернуть">Развернуть</button>
+      </div>
+    </div>
+  </template>
+
+  <div class="container" id="tasks"></div>
+
+  <div class="filter">
+    <button class="btn new-task" name="new-task">Новая задача</button>
+    <div class="checkbox">
+      <input type="checkbox" id="post"><span></span>
+    </div>
+    <label for="post">По приоритету</label>
+    <div class="project-list">
+      <select id="project-name" name="list">
+        <option value="all">All</option>
+      </select>
+    </div>
+  </div>
+
+  <form class="form hide">
+    <input type="hidden" name="id">
+    <label>Название задачи:
+      <input type="text" name="title" placeholder="Title of the task" required>
+    </label>
+    <label>Название проекта:
+      <input type="text" name="project" placeholder="Project Name" required>
+    </label>
+    <label>Приоритет:
+      <select name="priority">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </label>
+    <label>Описание:
+      <textarea rows="4" name="description" placeholder="Description of the task" required></textarea>
+    </label>
+    <div>
+      <button class="btn" type="submit">Save changes</button>
+      <button class="btn" type="reset">Cancel</button>
+    </div>
+  </form>
+
+  <script src="index.js"></script>
+</body>
+</html>
